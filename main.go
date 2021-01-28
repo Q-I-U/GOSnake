@@ -1,13 +1,14 @@
 package main
 
 import(
+	"fmt"
 	"github.com/GNUSheep/GOsnake/src"
 )
 
-func main(){
-	conf := Config{800, 600}
+func main() {
+	conf := game.DefaultConfig
 	err := game.Run(&conf)
 	if err != nil{
-		return err
+		fmt.Println("Error")
 	}
 }

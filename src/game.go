@@ -2,6 +2,7 @@ package game
 
 import(
 	"github.com/veandco/go-sdl2/sdl"
+	sdlttf "github.com/veandco/go-sdl2/ttf"
 )
 
 type Config struct{
@@ -9,15 +10,26 @@ type Config struct{
 	height int
 }
 
+var DefaultConfig = Config{
+	width:       800,
+	height:      600,
+}
+
 func Run(c *Config) error{
 	if err := sdl.Init(sdl.INIT_EVERYTHING); err != nil {
 		return err
 	}
 	defer sdl.Quit()
+
+	if err := sdlttf.Init(); err != nil {
+		return err
+	}
+	defer sdlttf.Quit()
+
 	engine, err := NewEngine(c)
 	if err != nil {
 		return err
 	}
-	engine.Run()
+	engine.Start()
 	return nil
 }

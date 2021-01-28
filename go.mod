@@ -1,4 +1,4 @@
-module github.com/GNUSheep/Gobros
+module github.com/GNUSheep/GOsnake
 
 go 1.15
 
