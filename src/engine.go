@@ -3,7 +3,6 @@ package game
 import(
 	"github.com/veandco/go-sdl2/sdl"
 	sdlttf "github.com/veandco/go-sdl2/ttf"
-	"time"
 )
 
 type Rectangle struct {
@@ -133,16 +132,12 @@ func (e *engine) GameInput(pos Rectangle){
 					switch event.(*sdl.KeyboardEvent).Keysym.Sym {
 					case sdl.K_RIGHT:
 						pos = movePlayer(pos, e.render, e, "right")
-						time.Sleep(1 * time.Second)
 					case sdl.K_LEFT:
 						pos = movePlayer(pos, e.render, e, "left")
-						time.Sleep(1 * time.Second)
 					case sdl.K_UP:
 						pos = movePlayer(pos, e.render, e, "up")
-						time.Sleep(1 * time.Second)
 					case sdl.K_DOWN:
 						pos = movePlayer(pos, e.render, e, "down")
-						time.Sleep(1 * time.Second)
 					}
 				}
 			}
