@@ -33,3 +33,10 @@ func Run(c *Config) error{
 	engine.Start()
 	return nil
 }
+
+func Start(e *engine){
+	board(e, e.render)
+	pos := New(e.render)
+	e.render.Present()
+	e.GameInput(pos)
+}
