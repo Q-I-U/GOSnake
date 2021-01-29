@@ -47,7 +47,7 @@ func menu(r *sdl.Renderer, win *sdl.Window){
 	font, _ = sdlttf.OpenFont("./assets/dejavu.ttf", 32)
 	surface, _ = win.GetSurface()
 	solid, _ = font.RenderUTF8Solid("              Press ENTER to play or Q to quit.", sdl.Color{255, 255, 255, 255})
-	solid.Blit(nil, surface, nil)
+	solid.Blit(nil, surface, &sdl.Rect{0, 200, surface.W, surface.H})
 	win.UpdateSurface()
 } 
 
